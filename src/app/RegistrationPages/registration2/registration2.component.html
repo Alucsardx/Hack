@@ -1,0 +1,41 @@
+<div class="registration2-container">
+    <div class="background">
+        <img class="background-image" src="../assets/FirstPage.png" />
+    </div>
+    <div class="registration2-background">
+        <div class="x-button" (click)="onCloseClick()"></div>
+        <div class="content-container">
+            <div class="first-assignement-header assignement">
+                მეორე დავალება
+            </div>
+            <div class="content assignement">
+                <div class="pargraph header">მოგვიყევი შენი გუნდის შესახებ</div>
+                <div class="pargraph minor">გაგვაცანი მისი გუნდის წევრები მოკლედ და კრეატიულად</div>
+                <div class="input-container">
+                    <textarea id="myTextarea" class="text-input" placeholder="მაქს. 300 სიმბოლო" [(ngModel)]="textModel"
+                        (input)="onInput()"></textarea>
+                    <div class="the-count">
+                        <span class="current">{{currentCount}}</span>
+                        <span class="maximum">/300</span>
+                    </div>
+                </div>
+                <div class="pargraph  header">ვიზუალურად წარმოაჩინე შენი გუნდი</div>
+                <div class="pargraph minor">გამოიყენე ნებისმიერი ფორმატი</div>
+
+                
+                <div class="upload-button-container">
+                    <input hidden type="file" #uploader (change)="uploadFile($event)"/>
+                    <div class="upload-button" (click)="uploader.click()">
+                        <img class="upload-button-image" src="../assets/Upload.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="next-button-container">
+                <div class="next-button" (click)="onNextClick()">
+                    <img class="next-button-image" src="../assets/Next.png" />
+                </div>
+            </div>
+        </div>
+        <img class="background-image" src="../assets/Registration1Background.png" />
+    </div>
+</div>

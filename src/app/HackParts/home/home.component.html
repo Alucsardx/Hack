@@ -1,0 +1,24 @@
+<div class="hack-container">
+    <img class="background-image" src="../assets/Background.png" />
+    <div class="image-box" (click)="onRegisterClick()">
+        <img class="register-image" src="../assets/Register.png" />
+    </div>
+    <div class="pages-container">
+        <div class="about-hack-image-container category" (click)="onAboutClick()">
+            ჰაკათონის შესახებ
+        </div>
+        <div class="partners-image-container category" (click)="onPartnersClick()">
+            პარტნიორები
+        </div>
+        <div class="hack-playlist-image-container category" (click)="onPlaylistClick()">
+            ჰაკათონის playlist
+        </div>
+        <div class="hack-playlist-image-container category" (click)="onContactClick()">
+            კონტაქტი
+        </div>
+    </div>
+</div>
+<app-registration1 *ngIf="page==1" (action)="onAction($event, 1)"></app-registration1>
+<app-registration2 *ngIf="page==2" (action)="onAction($event, 2)"></app-registration2>
+<app-registration3 *ngIf="page==3" (action)="onAction($event, 3)"></app-registration3>
+<app-registration4 *ngIf="page==4" (action)="onAction($event, 4)"></app-registration4>
