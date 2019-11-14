@@ -14,6 +14,7 @@ import { PlaylistComponent } from './HackParts/playlist/playlist.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './HackParts/home/home.component';
 import { EmailService } from './Services/email.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'    },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [RouterModule, EmailService],
   bootstrap: [AppComponent]

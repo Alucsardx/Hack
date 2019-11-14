@@ -22,6 +22,7 @@ export class Registration2Component implements OnInit {
       text: this.textModel,
       file: this.file
     }
+    console.log(data);
     this.action.emit(data);
   }
   onCloseClick(){
@@ -39,5 +40,6 @@ export class Registration2Component implements OnInit {
   }
   uploadFile(event){
     this.file = event.target['files'][0];
+    console.log(this.file);
   }
 }

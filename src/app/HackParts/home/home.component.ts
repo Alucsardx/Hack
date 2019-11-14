@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     
   }
   ngOnInit(){
-    this.emailService.SendEmail();
+    this.emailService.auth();
   }
   onRegisterClick(){
     this.page = 1;
@@ -32,10 +32,16 @@ export class HomeComponent implements OnInit {
   onContactClick(){
     this.router.navigateByUrl("/contact");
   }
-  onAction(action, pageNumber){
+  onAction(action, info){
     if (action.action == -1) {
       this.page = 0;
       return;
+    }
+    else if (action.action == 0) {
+      if (action.file) {
+        var ans = this.emailService.UploadFIle(action.file);
+        console.log(ans);
+      }
     }
     if (this.page != 4) {
       this.page++;
