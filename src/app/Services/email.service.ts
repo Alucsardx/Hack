@@ -14,7 +14,7 @@ export class EmailService{
     }
 
     public UploadFIle(file){
-        return this.http.post("https://www.googleapis.com/drive/v3/files?key=AIzaSyDHtPwW9QH2wOnB6AslzNTzWNqgnmaj_rY", file);
+        return this.http.post("https://www.googleapis.com/drive/v3/files?key=AIzaSyCrSd8FeEwHZbZzKSfVrx5koFODT7Ja9VE", file);
     }
 
     auth(){
@@ -25,7 +25,7 @@ export class EmailService{
         function initClient() {
           gapi.client.init({
             discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
-            clientId: 'AIzaSyDHtPwW9QH2wOnB6AslzNTzWNqgnmaj_rY',
+            clientId: 'AIzaSyCrSd8FeEwHZbZzKSfVrx5koFODT7Ja9VE',
             scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
           }).then(function () {
             // do stuff with loaded APIs
