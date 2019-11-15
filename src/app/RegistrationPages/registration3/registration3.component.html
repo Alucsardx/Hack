@@ -11,27 +11,27 @@
             <div class="content assignement">
                 <div class="input-wrapper">
                     <span class="header">გუნდის წევრების რაოდენობა</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="number" [(ngModel)]="number" (input)="onChange()">
                 </div>
                 <div class="input-wrapper">
                     <span class="header">სახელი, გვარი</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="text" [(ngModel)]="nameSurname" (input)="onChange()">
                 </div>
                 <div class="input-wrapper">
                     <span class="header">ასაკი</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="number" [(ngModel)]="age" (input)="onChange()">
                 </div>
                 <div class="input-wrapper">
                     <span class="header">ელ-ფოსტა</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="text" [(ngModel)]="eMail" (input)="onChange()">
                 </div>
                 <div class="input-wrapper">
                     <span class="header">საკონტაქტო ნომერი</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="text" [(ngModel)]="phoneNumber" (input)="onChange()">
                 </div>
                 <div class="input-wrapper">
                     <span class="header">FB მისამართი</span>
-                    <input class= "input" type="text">
+                    <input class= "input" type="text" [(ngModel)]="fbAccount" (input)="onChange()">
                 </div>
             </div>
             <div class="next-button-container">

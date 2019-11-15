@@ -10,12 +10,13 @@ import { EmailService } from 'src/app/Services/email.service';
 export class HomeComponent implements OnInit {
 
   public page = 0;
-  
+  public data: any;
+  public register2Data: any;
+  public register3Data: any;
   constructor(private router: Router, private emailService: EmailService) {
     
   }
   ngOnInit(){
-    this.emailService.auth();
   }
   onRegisterClick(){
     this.page = 1;
@@ -38,9 +39,20 @@ export class HomeComponent implements OnInit {
       return;
     }
     else if (action.action == 0) {
-      if (action.file) {
-        var ans = this.emailService.UploadFIle(action.file);
-        console.log(ans);
+      if (action.page == 2) {
+        this.register2Data ={
+          text: action.text,
+          file: action.file
+        }
+      }
+      if (action.page == 3) {
+        this.register3Data = action.data;
+        this.data = {
+          InputField: this.register2Data.text,
+          UploadedFile: this.register2Data.file,
+          Information: this.register3Data
+        };
+        this.emailService.UploadFIle(this.data);
       }
     }
     if (this.page != 4) {

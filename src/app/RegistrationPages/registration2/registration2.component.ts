@@ -19,10 +19,10 @@ export class Registration2Component implements OnInit {
   onNextClick(){
     var data = {
       action: 0,
+      page: 2,
       text: this.textModel,
       file: this.file
     }
-    console.log(data);
     this.action.emit(data);
   }
   onCloseClick(){
@@ -33,13 +33,11 @@ export class Registration2Component implements OnInit {
   }
 
   ngOnChanges(){
-    console.log(this.textModel);
   }
   onInput(){
     this.currentCount = this.textModel.length;
   }
   uploadFile(event){
     this.file = event.target['files'][0];
-    console.log(this.file);
   }
 }
