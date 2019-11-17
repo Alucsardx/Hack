@@ -18,7 +18,11 @@
         </div>
     </div>
 </div>
-<app-registration1 *ngIf="page==1" (action)="onAction($event, 1)"></app-registration1>
+<app-registration1 class="registration-page" *ngIf="page==1" (action)="onAction($event, 1)"></app-registration1>
 <app-registration2 *ngIf="page==2" (action)="onAction($event, 2)"></app-registration2>
 <app-registration3 *ngIf="page==3" (action)="onAction($event, 3)"></app-registration3>
 <app-registration4 *ngIf="page==4" (action)="onAction($event, 4)"></app-registration4>
+
+<div class="registration-background" [hidden]="page==0">
+    <img class="background-image" src="../assets/FirstPage.png" />
+</div>
