@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  EmailService: 'https://localhost:44356/api/api/Mail/SendMail'
+  EmailService: "https://localhost:44309/api/mail/sendMail"
 };
 
 /*

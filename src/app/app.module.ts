@@ -42,8 +42,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
   ],
   providers: [RouterModule, EmailService],
   bootstrap: [AppComponent]

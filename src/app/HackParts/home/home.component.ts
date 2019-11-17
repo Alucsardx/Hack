@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     
   }
   ngOnInit(){
+    // this.emailService.UploadFIle().subscribe((data) => console.log(data));
   }
   onRegisterClick(){
     this.page = 1;
@@ -52,7 +53,16 @@ export class HomeComponent implements OnInit {
           UploadedFile: this.register2Data.file,
           Information: this.register3Data
         };
-        this.emailService.UploadFIle(this.data);
+
+        this.emailService.UploadFIle(this.data.UploadedFile, {
+          Information: this.register2Data.text,
+          NameSurname: this.register3Data.nameSurname,
+          MemberCount: this.register3Data.teamMembers,
+          Age: this.register3Data.age,
+          EMail: this.register3Data.eMail,
+          MobileNumber: this.register3Data.phoneNumber,
+          Facebook: this.register3Data.fbAccount
+        }).subscribe((data) => console.log(data));
       }
     }
     if (this.page != 4) {
