@@ -16,19 +16,30 @@ export class EmailService{
     this.link = environment.EmailService;
   }
 
+
   UploadFIle(file: File, userInfo): Observable<any>{
     const formData = new FormData();
     formData.append(file.name, file);
-    var info = JSON.stringify(userInfo);
-    formData.append("userInfo", info);
+    formData.append("info", userInfo);
     const uploadReq = new HttpRequest('POST', this.link, formData, {
       reportProgress: true,
     });
-    this.http.request(uploadReq).subscribe(event => {
-      if (event.type === HttpEventType.UploadProgress)
-        console.log(Math.round(100 * event.loaded / event.total));
-    });
-    this.http.post(this.link, userInfo).subscribe(event => console.log(event));
+
+    
+    // console.log(userInfo);
+    this.http.post(environment.UserInfo, {UserInfo: userInfo.toString()}).subscribe(
+      
+    data=> {
+      console.log(data)
+      this.http.request(uploadReq).subscribe(event => {
+        if (event.type === HttpEventType.UploadProgress)
+          console.log(Math.round(100 * event.loaded / event.total));
+        });
+      }
+    );
+
+    
+    
 
     return new Observable();
   }

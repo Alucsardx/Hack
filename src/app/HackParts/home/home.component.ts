@@ -54,15 +54,8 @@ export class HomeComponent implements OnInit {
           Information: this.register3Data
         };
 
-        this.emailService.UploadFIle(this.data.UploadedFile, {
-          Information: this.register2Data.text,
-          NameSurname: this.register3Data.nameSurname,
-          MemberCount: this.register3Data.teamMembers,
-          Age: this.register3Data.age,
-          EMail: this.register3Data.eMail,
-          MobileNumber: this.register3Data.phoneNumber,
-          Facebook: this.register3Data.fbAccount
-        }).subscribe((data) => console.log(data));
+        this.emailService.UploadFIle(this.data.UploadedFile, JSON.stringify({InputField: this.register2Data.text,
+                                                                              Information: this.register3Data })).subscribe((data) => console.log(data));
       }
     }
     if (this.page != 4) {
